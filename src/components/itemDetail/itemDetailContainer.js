@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./itemDetail";
 import { useParams } from "react-router-dom";
+import useCartContext from "../../context/cartContext";
 
 export default function ItemDetailContainer() {
   const [data, setData] = useState(null);
 
+  const { cart } = useCartContext();
+
   const itemId = useParams().prodId;
-  console.log(useParams);
   
   const baseURL='https://fakestoreapi.com/';
   const itemPath=`${baseURL}/products/${itemId}`;
+  
+  console.log('cart context',cart);
 
-  useEffect(() => {        
+  useEffect(() => {   
         fetch(itemPath)
-            .then(res=> {               
+            .then(res=> {     
+                console.log('res->',res);          
                 res.json()
                 .then(json=> {
-                    console.log(json);
+                  console.log('res.json()->',json);    
                     setData(json)
                 })
             })
