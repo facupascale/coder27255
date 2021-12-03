@@ -19,7 +19,11 @@ export default function CartView() {
                 </div>
                 )}
             {cart.length > 0
-            ? <button onClick={() => clearCart()}>Vaciar carrito</button>    
+            ? 
+                <>
+                    <button onClick={() => clearCart()}>Vaciar carrito</button>    
+                    <Link to='/checkout'><button>Terminar compra</button></Link>
+                </>
             : <Link to='/'>Seguir de compras</Link>
             }
         
