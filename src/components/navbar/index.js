@@ -8,9 +8,10 @@ export default function NavBar() {
                 <div className="brand">
                     <Link to="/"><h3>Home</h3></Link>
                 </div>
-                <ul>
+                <ul className='lista'>
                     <li><Link to='/'>Catálogo</Link></li>
                     <li><Link to='/nosotros'>Nosotros</Link></li>
+                    <li><Link to='/cart'>Carrito</Link></li>
                 </ul>
               
         </div>

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './itemCount.css'
 
-export default function ItemCount({initial = 1,stock, onAdd, ctaText = "Finalizar"}) {    
+export default function ItemCount({initial = 1,stock = 10, onAdd, ctaText = "Finalizar"}) {    
     const [counter, setCounter] = useState(initial)
     const increment = () => {
         setCounter(counter + 1)
